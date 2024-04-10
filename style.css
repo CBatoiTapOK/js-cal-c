@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+/*
+    screen white #F1F2F3
+    button blue #4B5EFC
+    button grey #D2D3DA
+    button white #FFFFFF
+    bg #17171C
+    num color #000000
+*/
+
+body {
+    background-color: #17171C;
+}
+
+.calc {
+    margin: 100px auto;
+    width: 300px;
+    height: 500px;
+    border-radius: 20px;
+    background: #F1F2F3;
+    color: #000000;
+    font-family: "Work Sans";
+    padding: 18px;
+    box-shadow: 1px 1px 1px #D2D3DA;
+}
+
+.buttons {
+    display: grid;
+    grid-template-areas:
+    "C plus-minus persent div"
+    "seven eight nine multi"
+    "four five six minus"
+    "one two three plus"
+    "dot zero delete equal";
+    grid-gap: 9px;
+    justify-items: center;
+}
+
+.btn {
+    width: 60px;
+    height: 60px;
+    background-color: #D2D3DA;
+    border-radius: 30%;
+    text-align: center;
+    line-height: 60px;
+    font-size: 1.75rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+.btn:hover {
+    filter: brightness(90%);
+}
+.btn:active {
+    filter: brightness(80%);
+}
+.btn.bg-grey {
+    background: #D2D3DA;
+}
+.btn.bg-blue {
+    background: #4B5EFC;
+}
+.btn.bg-white {
+    background: #FFFFFF;
+}
