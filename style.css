@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
 /*
     screen white #F1F2F3
     button blue #4B5EFC
@@ -73,7 +74,11 @@ body {
 }
 .btn.bg-blue {
     background: #4B5EFC;
+    color:#FFFFFF
 }
 .btn.bg-white {
     background: #FFFFFF;
+}
+.btn.delete {
+    align-content: center;
 }
