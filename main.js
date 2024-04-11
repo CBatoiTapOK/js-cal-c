@@ -93,9 +93,9 @@ document.querySelectorAll('.btn').forEach(function(element) {
                 break
 
             case '%':
-                expression.innerHTML = String(Number(num_1) / 100)
+                expression.innerHTML = String(+(Number(num_1) / 100).toFixed(3))
                 operation = ''
-                num_1 = String(Number(num_1) / 100)
+                num_1 = String(+(Number(num_1) / 100).toFixed(3))
                 break
 
 
