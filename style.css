@@ -26,7 +26,10 @@ body {
 
 .screen {
     display: grid;
-    height: 120px;;
+    height: 120px;
+    overflow-y : hidden;
+    overflow-x: hidden;
+    white-space: nowrap;
     padding: 5px;
     color: #17171C;
     justify-items: end;
@@ -35,8 +38,9 @@ body {
 }
 .screen p {
     text-align: right;
-    font-size: 3.5rem;
+    font-size: 3rem;
     margin: 0px;
+    user-select: none;
 }
 
 .buttons {
@@ -61,6 +65,7 @@ body {
     font-size: 1.75rem;
     cursor: pointer;
     user-select: none;
+    color: #17171C
 }
 
 .btn:hover {
