@@ -58,6 +58,7 @@ body {
 .btn {
     width: 60px;
     height: 60px;
+    color:#17171C;
     background-color: #D2D3DA;
     border-radius: 30%;
     text-align: center;
