@@ -22,7 +22,7 @@ function calculate(num1, num2, op) {
     }
     catch{
         expression.innerHTML = "ОШИБКА"
-        num_1 = 0
+        num_1 = '0'
         num_2 = ''
         operation = ''
     }
@@ -65,9 +65,12 @@ document.querySelectorAll('.btn').forEach(function(element) {
                 break
 
             case '=':
+                if (num_2 != ''){
                 expression.innerHTML = String(calculate(Number(num_1), Number(num_2), operation))
+                num_1 = String(calculate(Number(num_1), Number(num_2), operation))
+                num_2 = ''
                 operation = ''
-                num_1 = '0'
+                }
                 break
 
             case 'C':
@@ -78,10 +81,17 @@ document.querySelectorAll('.btn').forEach(function(element) {
                 break
 
             case 'reverse_sign':
-                expression.innerHTML = String(-calculate(Number(num_1), Number(num_2), operation))
-                operation = ''
-                num_1 = '0'
+                if (num_2 != ''){
+                    expression.innerHTML = String(-(calculate(Number(num_1), Number(num_2), operation)))
+                    num_1 = String(-(calculate(Number(num_1), Number(num_2), operation)))
+                    operation = ''
+                }
+                else{
+                    expression.innerHTML = String(-Number(num_1))
+                    num_1 = String(-Number(num_1))
+                }
                 break
+
             case '%':
                 expression.innerHTML = String(Number(num_1) / 100)
                 operation = ''
@@ -91,6 +101,7 @@ document.querySelectorAll('.btn').forEach(function(element) {
 
             default:
                 // В случае когда начальная строка это просто 0
+
                 if (expression.innerHTML == "0"){
                     if (element.classList[1] == 'operation') { //если ввели операцию
                         if (operation == ''){
@@ -104,11 +115,15 @@ document.querySelectorAll('.btn').forEach(function(element) {
                             }
                         }
                     }
-
                     else{
                         expression.innerHTML = element.innerHTML
                         num_1 = element.id
                     }
+                }
+                
+                else if (expression.innerHTML == "Infinity"){
+                    expression.innerHTML = "0"
+                    num_1 = '0'
                 }
                 // в случае ввода операции
                 else if (element.classList[1] == 'operation') { //если ввели операцию
@@ -125,13 +140,16 @@ document.querySelectorAll('.btn').forEach(function(element) {
                 }
 
                 else {
-                    expression.innerHTML += element.innerHTML
+                    expression.innerHTML += element.id
                     if (operation == ''){
                         num_1 += element.id
                     }
                     else {
                         num_2 += element.id
                     }
+                    console.log(operation)
+                    console.log(num_1)
+                    console.log(num_2)
                 }
                 break
         }
