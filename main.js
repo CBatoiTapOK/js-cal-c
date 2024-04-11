@@ -95,7 +95,7 @@ document.querySelectorAll('.btn').forEach(function(element) {
             case '%':
                 expression.innerHTML = String(Number(num_1) / 100)
                 operation = ''
-                num_1 = '0'
+                num_1 = String(Number(num_1) / 100)
                 break
 
 
@@ -120,9 +120,13 @@ document.querySelectorAll('.btn').forEach(function(element) {
                         num_1 = element.id
                     }
                 }
-                
+
                 else if (expression.innerHTML == "Infinity"){
-                    expression.innerHTML = "0"
+                    expression.innerHTML = "Не дели на ноль плз"
+                    num_1 = '0'
+                }
+                else if (expression.innerHTML == "NaN"){
+                    expression.innerHTML = "Не дели на ноль плз"
                     num_1 = '0'
                 }
                 // в случае ввода операции
