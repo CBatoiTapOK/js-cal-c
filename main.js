@@ -122,11 +122,9 @@ document.querySelectorAll('.btn').forEach(function(element) {
                 }
 
                 else if (expression.innerHTML == "Infinity"){
-                    expression.innerHTML = "Не дели на ноль плз"
                     num_1 = '0'
                 }
                 else if (expression.innerHTML == "NaN"){
-                    expression.innerHTML = "Не дели на ноль плз"
                     num_1 = '0'
                 }
                 // в случае ввода операции
